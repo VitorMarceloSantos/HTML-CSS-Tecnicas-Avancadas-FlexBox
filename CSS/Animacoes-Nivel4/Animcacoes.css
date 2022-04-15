@@ -1,0 +1,34 @@
+@keyframes animacao4{
+    from {left: 0;}
+    to {left: 500px;}
+}
+
+/*Timing Function*/
+.box{
+    width: 50px;
+    height: 50px;
+    background-color: orange;  
+    position: relative; 
+    animation-name: animacao4;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+} 
+/*Todos tem a mesma duração(chaga no fim no mesmo tempo)*/
+#animation-div4{
+    animation-timing-function: linear; /*Velocidade constante durante toda a duração*/
+}
+#animation-div5{
+    animation-timing-function: ease; /*Começa lento, no meio é rápido, e no fim é lento*/
+}
+#animation-div6{
+    animation-timing-function: ease-in; /*Lento no inicio e normal do fim*/
+}
+#animation-div7{
+    animation-timing-function: ease-out; /*Velocidade normal no inicio, e lento no fim*/
+}
+#animation-div8{
+    animation-timing-function: ease-in-out; /*Começa lento, no meio é rápido, e no fim é lent*/
+}
+/*Shorthand*/
+

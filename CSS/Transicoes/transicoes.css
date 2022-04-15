@@ -1,0 +1,20 @@
+.btn{
+    display: block;
+    position: relative;
+    padding: 10px;
+    margin-bottom: 25px;
+    width: 150px;
+    height: 75px;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #333;
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: 1s; /*Tempo que vai levar para a mudança de cor*/
+}
+
+.btn:hover{
+    color: #333;
+    background-color: #fff;
+}
+

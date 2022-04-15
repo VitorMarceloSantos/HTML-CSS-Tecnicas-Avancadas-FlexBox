@@ -1,0 +1,12 @@
+@keyframes animacao{ /*keyframes: passo a passo das animações.*/
+    from {background-color: red;} /*Inicio*/
+    to {background-color: yellow;} /*Fim*/
+}
+
+.animation-div{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: animacao; /*Nome da animação*/
+    animation-duration: 5s; /*Duração da animação*/
+} /*Após finalizar a animação, a mesma volta para seu estado incial*/

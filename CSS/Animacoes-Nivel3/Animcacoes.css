@@ -1,0 +1,17 @@
+
+@keyframes animacao3{ 
+    from {left: 0;} /*posição inicial do elemento, faz com que a animação fique mais suave*/
+    to {left: 200px; background-color: yellow;}
+}
+
+.animation-div3{
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+    position: relative;
+    animation-name: animacao3; /*Nome da animação*/
+    animation-duration: 5s; /*Duração da animação*/
+    animation-delay: 2s;/*Atrasa a animação em X segundos. OBS: o delay funciona apenas para a primeira animação, sendo que as demais(iteration-count) não terão o delay*/
+    animation-iteration-count: 3;/*Quantas vezes a animação vai rodar / infinite: a animação não tem limite para rodar*/
+} /*Após finalizar a animação, a mesma volta para seu estado incial*/
+
