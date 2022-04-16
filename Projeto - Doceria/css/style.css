@@ -1,0 +1,250 @@
+*{ /*Resetando as configuraç*/
+    margin: 0px;
+    padding: 0px;
+}
+@font-face { /*Adicionando as fontes que serão utilizadas*/
+    font-family: "OpenSans";
+    src: url("../fonts/OpenSans-VariableFont_wdth\,wght.ttf") format('truetype');
+}
+
+:root{ /*Ao utilizar o root fica mais fácil em caso de manutenção e mudanças*/
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: OpenSans, sans-serif;
+    --cor-base: #006599;
+}
+
+html{ /*Todo o conteúdo vai ter essa configuração*/
+    font-family: var(--fonte-padrao);
+    color: black;
+}
+a{
+   transition: .5s; 
+}
+/*SideBar*/
+#sidebar{
+  position: fixed; /*Vai ficar fixa em todoa a pagina, independentemente da rolagem da página*/
+  height: 100%;
+  width: 300px;
+  background-color: var(--cor-base);
+  padding-top: 40px;
+}
+#sidebar h1{
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+#sidebar a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+#sidebar a:hover{
+    color: #cac64e;
+}
+#sidebar li{
+    padding: 20px;
+    text-align: center;
+}
+.sidebar-container{
+    position: relative;
+    margin: auto;
+    width: 200px; /*Criando um container de 200px para centralizar o conteúdo, dentro de sidebar(que tem o width de 300px)*/
+}
+.logo-doceria{
+    width: 60px;
+    height: 60px;
+    display: block;/*Utilizado para garantir que a imagem ocupe todo o bloco*/
+    position: relative;
+    margin: auto;
+}
+/*Conteúdo*/
+.content{ /*Mover todo o conteúdo para a direita*/
+    padding-left: 0;
+    position: absolute;
+    margin-left: 300px;/*Mover para a esquerda*/
+    width: calc(100% - 300px);/*Tamanho geral do content será de o valor dela(100%) menos os 300px da sidebar a esquerda*/
+}
+.content h1, .content h2{
+    color: #006599;
+    margin-bottom: 30px;
+}
+.content h1{
+    font-size: 2.3em;
+}
+.content h2{
+    font-size: 1.8em;
+}
+section{
+    padding-left: 50px; /* Todas as sections teram padding left de 50px*/
+}
+/*Sessão BemVindo*/
+#sessao-bemvindo{
+    padding-left: 0; /*Tirar o padding do banner*/
+}
+#sessao-bemvindo .banner{   
+    height: 400px;
+    background-image: url("../img/banner2.jpg");
+    background-position: center;
+    background-size: cover; /*Colocar a imagem da melhor maneira possivel dentro do tamanho dela*/     
+}
+.sessao-bemvindo-content{
+    padding-left: 50px;/*O conteúdo terá um padding left de 50px*/
+}
+.sessao-bemvindo-content h1{
+    margin-top: 70px;
+}
+#sessao-bemvindo::after, #sessao-sobre::after{ /*Pseudo Elemento*/
+    content: ""; /*Div fantasma*/
+    display: block;
+    clear: both;/*É uma palavra-chave que indica que o elemento será movido para baixo para limpar os elementos flutuantes do lado esquerdo e direito.*/
+    margin-bottom: 100px;
+}
+.sessao-minibanner{
+    width: 300px;
+    height: 400px;
+    background-image: url("../img/banner3.jpg"); 
+    background-position: center;
+    background-size: cover;
+    float: left; /*Colocar o texto ao lado*/
+}
+.sessao-descricao{
+    position: absolute;
+    left: 370px; /*O texto será enviado para a esquerda*/
+    padding-right: 30px;
+}
+.sessao-descricao{
+    line-height: 2;/*Altura da linha*/
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+.sessao-bemvindo-btn, form input[type=submit]{
+    background-color: var(--cor-base);
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 40px;
+    transition: .5s;
+    display: block;
+    width: 100px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-left: 25px;
+}
+.sessao-bemvindo-btn:hover, form input[type=submit]:hover{
+    background-color:#279016 ;
+}
+/*Sessão Sobre*/
+#sessao-sobre .sessao-minibanner{
+    float: right;
+    margin-right: 50px;
+    background-image: url("../img/banner4.jpg");
+}
+#sessao-sobre .sessao-descricao{
+    position: absolute;
+    left: 25px;
+    width: calc(100% - 400px);
+}
+/*Galerias*/
+.banner-galeria{
+    background-position: center;
+    background-size: cover;
+    display: inline-block; /*Ficar na mesma linha*/
+    height: 200px;
+}
+#sessao-doces1, #sessao-doces2, #sessao-doces3{ /*Delimitando o espaço para não ultrapassar o espaço do outro.*/
+    padding-right: 50px;
+    margin-bottom: 50px;
+}
+.doces1-img{ /*O total de 100% foi dividido nas 5 imagens(19.8%)*/
+    width: 18.8%;
+    margin-left: .5%;
+    margin-right: .5%;
+}
+#img1{
+    background-image:url("../img/galeria1.jpg");
+    margin-left: 0;
+}#img2{
+    background-image:url("../img/galeria2.jpg");
+}#img3{
+    background-image:url("../img/galeria3.jpg");
+}#img4{
+    background-image:url("../img/galeria4.jpg");
+}#img5{
+    background-image:url("../img/galeria5.jpg");
+    margin-right: 0;
+}
+.doces2-img{ /*O total de 100% foi dividido nas 3 imagens(33.3%)*/
+    width: 32.3%;
+    margin-left: .5%;
+    margin-right: .5%;
+}
+#img6{
+    background-image:url("../img/galeria6.jpg");
+    margin-left: 0;
+}#img7{
+    background-image:url("../img/galeria7.jpg");
+}#img8{
+    background-image:url("../img/galeria8.jpg");
+    margin-right: 0;
+}
+.doces3-img{ /*O total de 100% foi dividido nas 5 imagens(24.5%)*/
+    width: 23.9%;
+    margin-left: .5%;
+    margin-right: .5%;
+}
+#img9{
+    background-image:url("../img/galeria9.jpg");
+    margin-left: 0;
+}#img10{
+    background-image:url("../img/galeria10.jpg");
+}#img11{
+    background-image:url("../img/galeria11.jpg");
+}#img12{
+    background-image:url("../img/galeria12.jpg");
+    margin-right: 0;
+}
+/*Contato*/
+#form-contato{
+    width: 500px;   
+}
+#form-contato input[type=text], #form-contato input[type=email], #form-contato input[type=message]{
+    display: block;
+    border: 1px solid var(--cor-base);
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    font-size: 16px;
+    font-family: var(--fonte-destaque); 
+}
+#form-contato input[type=text]:focus, #form-contato input[type=email]:focus, #form-contato input[type=message]:focus{ /*Focus: quando o elemento é selecionado*/
+    border-color: #2790c6; 
+}
+#form-contato input[type=message]{
+    height: 150px;
+}
+#form-contato ::placeholder{ /*Seleciona todos os placehoder do formulário*/
+    color: var(--cor-base);
+}
+#form-contato input[type=submit]{ /*Altera as caracteristicas do botão Enviar*/
+    margin-left: 0px;
+    font-size: 16px;
+    width: 180px;
+}
+/*Sessao Footer*/
+footer{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: var(--cor-base);
+}
+footer p{
+    text-align: center;
+    font-weight: bold;
+}
+footer a{
+    text-decoration: none;
+}
+footer a:hover{
+    color: #279016; 
+}
