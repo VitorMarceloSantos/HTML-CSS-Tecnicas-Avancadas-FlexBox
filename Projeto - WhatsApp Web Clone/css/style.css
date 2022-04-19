@@ -5,6 +5,314 @@
     margin: 0;
 }
 /*Geral*/
-html, body, ul{
+html, body, ul, li{
     font-family: 'Open Sans', sans-serif;
+    list-style: none;
+}
+.container{
+    height: 100vh; /*100% da altura da tela(vh - view height)*/
+    position: relative;
+}
+/*Sidebar*/
+.sidebar{
+    width: 410px;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+}
+/*toolbar*/
+.toolbar-container{
+    width: 100%;
+    height: 60px;
+    background-color: #EEE;
+}
+.user-photo{
+    width: 40px;
+    border-radius: 50%; /*Faz com que a foto do usuário fique em círculo*/
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    background-color: #CCC;
+}
+.auxicons-toolbar-container{
+    float: right;/*A propriedade float do CSS determina que um elemento deve ser retirado do seu fluxo normal e colocado ao longo do lado direito ou esquerdo do seu containêr, onde textos  e elementos em linha irão se posicionar ao seu redor.*/
+    height: 60px;/*Utlizar o height e line-height do mesmo tamanho, faz com que centralize os elementos.*/
+    line-height: 60px;
+    padding-right: 20px;
+}
+.auxicons-toolbar-container i{
+    color: #80868A;
+    font-size: 20px;
+    margin-left: 15px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+/*Notification Container*/
+.notification-container{
+    width: 100%;
+    height: 90px;
+    padding-top: 23px;
+    padding-left: 80px;
+    background-color: #8dcde9;
+    color: #384c56;
+    position: relative;
+    box-sizing: border-box;/*Os elementos não ficarem maior que o fim da borda*/
+}
+.fa-bell-slash{
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #9de1fe;
+    background-color: #f5fcff;
+    position: absolute;
+    top: 20px;
+    left: 15px;
+}
+.notification-container p{
+    margin: 0;
+}
+.notification-container .receive-notification{
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+.activate-notification{
+    font-size: 13px;
+}
+/*Search Container*/
+.search-container{
+    height: 50px;
+    width: 100%;
+    padding-left: 7.5px;
+    padding-top: 7px;
+    background-color: #fff;
+    position: relative;
+    color: #bdc1c3;
+    box-sizing: border-box;/*Os elementos não passarem para fora da div*/
+}
+#contact-search{
+    position: absolute;
+    left: 30px;
+    top: 18px;
+    font-size: 14px;
+}
+#search{
+    border: none;
+    height: 35px;
+    width: 330px;
+    padding-left: 60px;
+    border-radius: 17.5px;
+    background-color: white;
+}
+#search::placeholder{
+    color: #bdc1c3;
+}
+/*Contacts Container*/
+.contacts-container{
+    height:auto;
+    background-color: #FFF;
+}
+.contact-box{
+    cursor: pointer;
+    height: 72px;
+    background-color: white;
+    border-top: 1px solid #f2f2f2;
+    position: relative;
+    box-sizing: border-box;
+}
+.contact-box:last-child{ /*Selecionar o ultimo filho(elemento)*/
+    border-bottom: 1px solid #f2f2f2;
+}
+.contact-box:hover{
+    background-color: #f4f5f5;
+}
+.active-chat{
+    background-color: #e9ebeb;
+}
+.active-chat .contact-box:hover{
+    background-color: #e9ebeb;
+}
+.contact-box .user-photo{
+    width: 50px;
+}
+.user-info{
+    margin-left: 80px;
+    padding-top: 10px;
+    display: inline-block;
+}
+.user-info p, .message-info{
+    margin: 0;
+} 
+.user-info{
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 12px;
+}
+.user-messagepreview{
+    font-size: 14px;
+    color: #454545;
+}
+.fa-check-double{
+    margin-right: 5px;
+    color: #4fc3f7;
+}
+.message-info{
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    display: inline-block;
+}
+.message-info .message-time{
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #CCC;
+}
+.message-pending{
+    background-color: #09d261;
+    color: #fff;
+    width: 19px;
+    height: 19px;/*Utiliza o tamanho(height) e o tamanho da linha(line-height) com o mesmo valor para centralizar o elemento*/
+    line-height: 19px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    text-align: center;
+    float: right; /*O elemento vai flutuar(será deslocado) a direito*/
+}
+/*Chat*/
+.chat-container{
+    position: absolute;
+    top: 0;
+    left: 410px;
+    width: calc(100% - 410px);/*100% da tela - 410px da sidebar*/
+    height: 100%;
+    background-color: #ccc;
+}
+/*Chat Navbar*/
+.chat-navbar{
+    height: 60px;
+    background-color: #EEE;
+    border-left: 1px solid #ddd;
+    padding-left: 75px;
+}
+.chat-nav p{
+    margin: 0;
+}
+.contactinfo-container{
+    display: inline-block;
+}
+.contactinfo-container .user-name{
+    font-size: 16px;
+    height: 60px;
+    line-height: 60px;
+}
+.chattools-container{
+    float: right;
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.chattools-container li{
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 18px;
+    color: #80868a;
+    cursor: pointer;
+}
+/*Message*/
+.messages-container{
+    background-color: #e1dad2;
+    height: calc(100% - 120px);/*A altura é a diferença de 100% da tela menos a soma das duas barras de 60px(120px)*/
+    position: relative;
+}
+.messages-container p{
+    margin: 0;
+}
+.bg-image{
+    background-image: url("../img/background_whats.png");
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;/*Em telas maiores essa imagem vai se repetir*/
+    opacity: .06;/*A opacidade vai até 1(100%), nesse caso adicionamos 60%*/
+}
+.chat-messages{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding: 30px 80px;
+    box-sizing: border-box;/*Os elementos internos não podem passar da borda do elemento pai*/
+}
+.chat-messages p{
+    display: block;
+    color: #262626;
+    font-size: 14px;
+    padding: 7px;
+    border-radius: 7px;
+    position: relative;
+    width: 200px;
+    margin-top: 20px;
+}
+.guest-message{
+    background-color: white;
+}
+.guest-message:before{ /*Criando o triangulo que fica no balão de conversa*//*before: o triangulo vai ficar na esquerda*/
+    content:"";
+    width: 0;
+    height: 0;
+    border-bottom: 17px solid transparent;
+    border-right: 17px solid #FFF;
+    position: absolute;
+    top: 0;
+    left: -10px;
+}
+.user-message{
+    background-color: #dcf8c6;
+    float: right;
+}
+.user-message:after{ /*Criando o triangulo que fica no balão de conversa*/ /*After: o triangulo vai ficar na direita*/
+    content:"";
+    width: 0;
+    height: 0;
+    border-bottom: 17px solid transparent;
+    border-left: 17px solid #dcf8c6;
+    position: absolute;
+    top: 0;
+    right: -10px;
+}
+/*Send Message*/
+.sendmessage-container{
+    background-color: #efefef;
+    border-left: 1px solid #ddd;
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+}
+#chatmessage{
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    background-color: #fff;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 20px;
+    font-size: 16px;
+    width: 815px;
+}
+.sendmessage-container i{
+    font-size: 24px;
+    color: #80868a;
+    height: 60px;
+    line-height: 60px;
+    cursor: pointer;
+}
+.fa-microphone{
+    float: right;
 }
